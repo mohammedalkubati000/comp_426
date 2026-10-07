@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TechNest Help Center</title>
+</head>
+
+<body>
+
+    <h1>TechNest Help Center</h1>
+
+    <p>
+        Click a button below to see help content, or switch the page theme.
+    </p>
+
+    
+    <button type="button" onclick="showTracking()">
+        Track Order
+    </button>
+
+    <button type="button" onclick="showReturns()">
+        Return Policy
+    </button>
+
+    <button type="button" onclick="showContact()">
+        Contact Us
+    </button>
+
+    <button type="button" onclick="toggleTheme()">
+        Toggle Theme
+    </button>
+
+    <hr>
+
+    
+    <p id="status">
+        Select an option above to get started.
+    </p>
+
+    
+    <iframe
+        id="helpFrame"
+        src="order-tracking.html"
+        width="600"
+        height="300"
+        title="TechNest Help Content">
+    </iframe>
+
+    <noscript>
+        <p>
+            JavaScript must be enabled for the buttons on this page to work.
+        </p>
+    </noscript>
+
+    <script>
+
+        
+        function showTracking() {
+            document.getElementById("helpFrame").src =
+                "order-tracking.html";
+
+            document.getElementById("status").innerHTML =
+                "Showing: <strong>Order Tracking</strong>";
+        }
+
+
+       
+        function showReturns() {
+            document.getElementById("helpFrame").src =
+                "returns.html";
+
+            document.getElementById("status").innerHTML =
+                "Showing: <strong>Return Policy</strong>";
+        }
+
+
+        
+        function showContact() {
+            document.getElementById("helpFrame").src =
+                "contact.html";
+
+            document.getElementById("status").innerHTML =
+                "Showing: <strong>Contact Us</strong>";
+        }
+
+
+       
+        function toggleTheme() {
+
+            var body = document.body;
+
+            if (body.style.backgroundColor === "black") {
+
+                body.style.backgroundColor = "white";
+                body.style.color = "black";
+
+            } else {
+
+                body.style.backgroundColor = "black";
+                body.style.color = "white";
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>
