@@ -1,0 +1,98 @@
+index.html
+100%
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TechNest Help Center</title>
+</head>
+<body>
+
+    <h1>TechNest Help Center</h1>
+    <p>Click a button below to see help content, or switch the page theme.</p>
+
+    <!-- ============================================================
+         PART 1: BUTTONS
+         Four buttons are listed below. Three are already wired up
+         with an onclick attribute. One (Toggle Theme) is missing
+         its onclick attribute.
+         ============================================================ -->
+
+    <button type="button" onclick="showTracking()">Track Order</button>
+    <button type="button" onclick="showReturns()">Return Policy</button>
+    <button type="button" onclick="showContact()">Contact Us</button>
+
+    <!--
+        TASK 1: This button is supposed to call the toggleTheme()
+        function (already written for you below) when clicked, but
+        its onclick attribute is missing. Add it.
+    -->
+    <button type="button">Toggle Theme</button>
+
+    <hr>
+
+    <p id="status">Select an option above to get started.</p>
+
+    <!-- ============================================================
+         PART 2: IFRAME
+         TASK 2: Create an <iframe> element here with:
+           - id="helpFrame"
+           - src="order-tracking.html"   (so it shows order tracking first)
+           - width="600"
+           - height="300"
+           - title="TechNest Help Content"
+         There is currently no iframe on the page — you are building
+         it from scratch.
+    -->
+
+
+    <!-- ============================================================
+         PART 3: NOSCRIPT FALLBACK
+         TASK 3c: Add a <noscript> element here containing a short
+         paragraph telling the visitor that JavaScript must be
+         enabled for the buttons on this page to work.
+    -->
+
+
+    <!-- ============================================================
+         PART 4: SCRIPTS
+         ============================================================ -->
+    <script>
+        // WORKED EXAMPLE — study this function carefully.
+        // It does two things when the "Track Order" button is clicked:
+        //   1. Changes what the iframe is showing, by changing its src
+        //   2. Updates the status message above using innerHTML
+        function showTracking() {
+            document.getElementById("helpFrame").src = "order-tracking.html";
+            document.getElementById("status").innerHTML = "Showing: <strong>Order Tracking</strong>";
+        }
+
+        // TASK 3a: Write showReturns() below, following the SAME pattern
+        // as showTracking() above, but:
+        //   - set the iframe's src to "returns.html"
+        //   - set the status message to say "Showing: Return Policy"
+
+
+        // TASK 3b: Write showContact() below, following the SAME pattern,
+        // but:
+        //   - set the iframe's src to "contact.html"
+        //   - set the status message to say "Showing: Contact Us"
+
+
+        // WORKED EXAMPLE — toggleTheme() switches the page between a
+        // light theme and a dark theme by changing style properties
+        // directly on the <body> element.
+        function toggleTheme() {
+            var body = document.body;
+            if (body.style.backgroundColor === "black") {
+                body.style.backgroundColor = "white";
+                body.style.color = "black";
+            } else {
+                body.style.backgroundColor = "black";
+                body.style.color = "white";
+            }
+        }
+    </script>
+
+</body>
+</html>
